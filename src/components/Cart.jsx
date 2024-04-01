@@ -1,7 +1,7 @@
 import { useCart } from '../hooks/useCart'
 
 export function Cart () {
-  const { toggleCart, addProductToCart, removeProductFromCart, cart } = useCart()
+  const { toggleCart, addProductToCart, removeProductFromCart, cart, clearCart } = useCart()
 
   return (
     <section className={`fixed ${toggleCart ? 'translate-x-0' : 'translate-x-full'} transition-transform top-0 right-0 bg-white w-[300px] h-screen p-5`}>
@@ -24,6 +24,10 @@ export function Cart () {
             </li>
           ))
         }
+        {
+          cart.length > 0 && <button onClick={() => clearCart()} className='bg-black text-white rounded-md px-4 py-2'>Limpiar Carrito</button>
+        }
+
       </ul>
     </section>
   )
