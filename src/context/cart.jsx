@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
       }
       newCart.push(newProduct)
       setCart(newCart)
-      setToggleCart(prevState => !prevState)
+      setToggleCart(true)
       return
     }
 
