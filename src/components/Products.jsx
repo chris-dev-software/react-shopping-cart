@@ -20,7 +20,7 @@ export function Products ({ products }) {
               <div className='p-5'>
                 <h2 className='text-lg text-center'>{product.title}</h2>
                 <div className='flex items-center justify-between'>
-                  <p>{product.price}</p>
+                  <p>S/. {product.price}</p>
                   {
                     isProductInCart
                       ? <button onClick={() => deleteProductFromCart(product)} className='bg-red-500 text-white px-4 py-1 rounded-md'>Eliminar</button>

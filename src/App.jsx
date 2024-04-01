@@ -21,7 +21,7 @@ function App () {
 
   return (
     <CartProvider>
-      <div className='max-w-7xl mx-auto px-10'>
+      <div className='max-w-7xl mx-auto px-5'>
         <header>
           <h1 className='text-center py-10 text-4xl'>Tienda Online</h1>
           <Filters categories={categories} />

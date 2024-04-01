@@ -20,16 +20,18 @@ export function Filters ({ categories }) {
   }
 
   return (
-    <section className='flex items-center justify-between py-10'>
-      <div className='flex items-center gap-10'>
+    <section className='flex flex-col sm:flex-row justify-between py-10 gap-3'>
+      <div className='flex flex-col sm:flex-row sm:items-center gap-2'>
         <label htmlFor='price'>Precio minimo:</label>
-        <input onChange={handleChangeMinPrince} type='range' id='price' min={0} max={1000} />
-        <span>S/. {filters.minPrice}</span>
+        <div className='flex gap-2'>
+          <input className='w-full' onChange={handleChangeMinPrince} type='range' id='price' min={0} max={1000} />
+          <p className='min-w-fit'>S/. {filters.minPrice}</p>
+        </div>
       </div>
 
-      <div className='flex items-center gap-10'>
+      <div className='flex flex-col sm:flex-row sm:items-center gap-2'>
         <label htmlFor='category'>Categoria:</label>
-        <select onChange={handleChangeCategory} id='category'>
+        <select className='border px-2' onChange={handleChangeCategory} id='category'>
           <option value='all'>Todos</option>
           {
                 categories.map(category => (

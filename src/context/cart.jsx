@@ -18,6 +18,7 @@ export const CartProvider = ({ children }) => {
       }
       newCart.push(newProduct)
       setCart(newCart)
+      setToggleCart(prevState => !prevState)
       return
     }
 
@@ -34,6 +35,10 @@ export const CartProvider = ({ children }) => {
     }).filter(item => item.quantity > 0)
 
     setCart(newCart)
+
+    if (newCart.length === 0) {
+      setToggleCart(false)
+    }
   }
 
   const deleteProductFromCart = (product) => {
@@ -43,6 +48,7 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([])
+    setToggleCart(false)
   }
 
   return (

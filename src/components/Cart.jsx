@@ -4,7 +4,7 @@ export function Cart () {
   const { toggleCart, addProductToCart, removeProductFromCart, cart, clearCart } = useCart()
 
   return (
-    <section className={`fixed ${toggleCart ? 'translate-x-0' : 'translate-x-full'} transition-transform top-0 right-0 bg-white w-[300px] h-screen p-5`}>
+    <section className={`fixed ${toggleCart ? 'translate-x-0' : 'translate-x-full'} transition-transform top-0 right-0 bg-white max-w-[300px] h-screen p-5 w-full`}>
       <ul className='flex flex-col h-full overflow-y-auto no-scrollbar gap-10'>
         {
           cart.map(product => (
